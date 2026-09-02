@@ -32,16 +32,12 @@ export const validateEnv = () => {
       if (!process.env.AWS_SECRET_ACCESS_KEY) errors.push('AWS_SECRET_ACCESS_KEY is required when STORAGE_PROVIDER=s3.');
     }
 
-    if (process.env.LLM_PROVIDER === 'openai' && !process.env.OPENAI_API_KEY) {
-      errors.push('OPENAI_API_KEY is required when LLM_PROVIDER=openai.');
+    if (process.env.LLM_PROVIDER === 'gemini' && !process.env.GEMINI_API_KEY) {
+      errors.push('GEMINI_API_KEY is required when LLM_PROVIDER=gemini.');
     }
 
-    if (process.env.EMBEDDING_PROVIDER === 'openai' && !process.env.OPENAI_API_KEY) {
-      errors.push('OPENAI_API_KEY is required when EMBEDDING_PROVIDER=openai.');
-    }
-
-    if (process.env.OCR_PROVIDER === 'openai' && !process.env.OPENAI_API_KEY) {
-      errors.push('OPENAI_API_KEY is required when OCR_PROVIDER=openai.');
+    if (process.env.OCR_PROVIDER === 'gemini' && !process.env.GEMINI_API_KEY) {
+      errors.push('GEMINI_API_KEY is required when OCR_PROVIDER=gemini.');
     }
   }
 
@@ -69,9 +65,9 @@ export const config = {
     maxFileSizeMb: parseInt(process.env.MAX_FILE_SIZE_MB || '10', 10)
   },
   ai: {
-    llmProvider: process.env.LLM_PROVIDER || 'local',
-    llmModel: process.env.LLM_MODEL || 'gpt-4o-mini',
-    openaiApiKey: process.env.OPENAI_API_KEY
+    llmProvider: process.env.LLM_PROVIDER || 'gemini',
+    llmModel: process.env.GEMINI_MODEL || 'gemini-3.5-flash',
+    geminiApiKey: process.env.GEMINI_API_KEY
   },
   embedding: {
     provider: process.env.EMBEDDING_PROVIDER || 'local',

@@ -1,35 +1,35 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import { connectDB } from './src/config/db.js';
-import { User } from './src/models/User.js';
-import { Course } from './src/models/Course.js';
-import { Topic } from './src/models/Topic.js';
-import { Material } from './src/models/Material.js';
-import { DocumentChunk } from './src/models/DocumentChunk.js';
-import { Assessment } from './src/models/Assessment.js';
-import { AssessmentAssignment } from './src/models/AssessmentAssignment.js';
-import { Attempt } from './src/models/Attempt.js';
-import { AttemptResponse } from './src/models/AttemptResponse.js';
-import { DiagnosticReport } from './src/models/DiagnosticReport.js';
-import { LearningPath } from './src/models/LearningPath.js';
-import { DiagnosticComparison } from './src/models/DiagnosticComparison.js';
+import { connectDB } from '../src/config/db.js';
+import { User } from '../src/models/User.js';
+import { Course } from '../src/models/Course.js';
+import { Topic } from '../src/models/Topic.js';
+import { Material } from '../src/models/Material.js';
+import { DocumentChunk } from '../src/models/DocumentChunk.js';
+import { Assessment } from '../src/models/Assessment.js';
+import { AssessmentAssignment } from '../src/models/AssessmentAssignment.js';
+import { Attempt } from '../src/models/Attempt.js';
+import { AttemptResponse } from '../src/models/AttemptResponse.js';
+import { DiagnosticReport } from '../src/models/DiagnosticReport.js';
+import { LearningPath } from '../src/models/LearningPath.js';
+import { DiagnosticComparison } from '../src/models/DiagnosticComparison.js';
 
-import { courseService } from './src/services/course.service.js';
-import { topicService } from './src/services/topic.service.js';
-import { materialService } from './src/services/material.service.js';
-import { documentIngestionService } from './src/services/documents/documentIngestionService.js';
-import { assessmentService } from './src/services/assessment.service.js';
-import { attemptService } from './src/services/attempt.service.js';
-import { evaluationService } from './src/services/evaluation.service.js';
-import { diagnosticService } from './src/services/diagnostic.service.js';
-import { learningPathService } from './src/services/learningPath.service.js';
-import { reassessmentService } from './src/services/reassessment.service.js';
-import { comparisonService } from './src/services/comparison.service.js';
-import { ragRetrievalService } from './src/services/rag/ragRetrievalService.js';
-import { llmService } from './src/services/ai/llmService.js';
-import { aiObservabilityService } from './src/services/ai/aiObservabilityService.js';
+import { courseService } from '../src/services/course.service.js';
+import { topicService } from '../src/services/topic.service.js';
+import { materialService } from '../src/services/material.service.js';
+import { documentIngestionService } from '../src/services/documents/documentIngestionService.js';
+import { assessmentService } from '../src/services/assessment.service.js';
+import { attemptService } from '../src/services/attempt.service.js';
+import { evaluationService } from '../src/services/evaluation.service.js';
+import { diagnosticService } from '../src/services/diagnostic.service.js';
+import { learningPathService } from '../src/services/learningPath.service.js';
+import { reassessmentService } from '../src/services/reassessment.service.js';
+import { comparisonService } from '../src/services/comparison.service.js';
+import { ragRetrievalService } from '../src/services/rag/ragRetrievalService.js';
+import { llmService } from '../src/services/ai/llmService.js';
+import { aiObservabilityService } from '../src/services/ai/aiObservabilityService.js';
 
-import { syntheticEvaluationDataset } from './src/tests/ai_evaluation/syntheticDataset.js';
+import { syntheticEvaluationDataset } from '../src/tests/ai_evaluation/syntheticDataset.js';
 
 dotenv.config();
 
@@ -582,3 +582,4 @@ const runAIEvaluationSuite = async () => {
 };
 
 runAIEvaluationSuite();
+
