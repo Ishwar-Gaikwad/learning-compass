@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment files & secrets
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Build output
+dist/
+build/
+
+# Local uploaded file storage & logs
+uploads/
+logs/
+*.log
+
+# Local MongoDB data
+.mongo_data/
+.mongo_persistence/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
