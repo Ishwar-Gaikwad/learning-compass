@@ -26,3 +26,5 @@ logs/
 .DS_Store
 Thumbs.db
 .vscode/
+# Local MongoDB persistent data
+server/.mongo_persistent_data/
