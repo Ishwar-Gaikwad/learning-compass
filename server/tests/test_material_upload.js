@@ -4,12 +4,12 @@ dotenv.config();
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { connectDB } from './src/config/db.js';
-import app from './src/app.js';
-import { User } from './src/models/User.js';
-import { Course } from './src/models/Course.js';
-import { Topic } from './src/models/Topic.js';
-import { Material } from './src/models/Material.js';
+import { connectDB } from '../src/config/db.js';
+import app from '../src/app.js';
+import { User } from '../src/models/User.js';
+import { Course } from '../src/models/Course.js';
+import { Topic } from '../src/models/Topic.js';
+import { Material } from '../src/models/Material.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -30,6 +30,8 @@ export const validateEnv = () => {
       if (!process.env.AWS_S3_BUCKET_NAME) errors.push('AWS_S3_BUCKET_NAME is required when STORAGE_PROVIDER=s3.');
       if (!process.env.AWS_ACCESS_KEY_ID) errors.push('AWS_ACCESS_KEY_ID is required when STORAGE_PROVIDER=s3.');
       if (!process.env.AWS_SECRET_ACCESS_KEY) errors.push('AWS_SECRET_ACCESS_KEY is required when STORAGE_PROVIDER=s3.');
+      if (!process.env.S3_ENDPOINT) errors.push('S3_ENDPOINT is required when STORAGE_PROVIDER=s3.');
+      if (!process.env.S3_REGION) errors.push('S3_REGION is required when STORAGE_PROVIDER=s3.');
     }
 
     if (process.env.LLM_PROVIDER === 'gemini' && !process.env.GEMINI_API_KEY) {
@@ -61,7 +63,8 @@ export const config = {
   storage: {
     provider: process.env.STORAGE_PROVIDER || 'local',
     s3BucketName: process.env.AWS_S3_BUCKET_NAME || 'learning-compass-materials',
-    awsRegion: process.env.AWS_REGION || 'us-east-1',
+    s3Endpoint: process.env.S3_ENDPOINT,
+    s3Region: process.env.S3_REGION || process.env.AWS_REGION || 'us-east-1',
     maxFileSizeMb: parseInt(process.env.MAX_FILE_SIZE_MB || '10', 10)
   },
   ai: {
