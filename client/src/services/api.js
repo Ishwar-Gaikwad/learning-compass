@@ -1,4 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = (typeof rawBaseUrl === 'string' && rawBaseUrl.trim() !== '')
+  ? rawBaseUrl.trim().replace(/\/+$/, '')
+  : '/api/v1';
 
 export const apiClient = async (endpoint, options = {}) => {
   const token = localStorage.getItem('token') || localStorage.getItem('learning_compass_token');
@@ -14,7 +17,10 @@ export const apiClient = async (endpoint, options = {}) => {
     delete headers['Content-Type'];
   }
 
-  const url = endpoint.startsWith('http') ? endpoint : `${API_BASE_URL}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  const url = endpoint.startsWith('http://') || endpoint.startsWith('https://')
+    ? endpoint
+    : `${API_BASE_URL}${cleanEndpoint}`;
 
   // Add standard 60-second timeout for async AI / ingestion operations
   const timeoutMs = options.timeout || 60000;
