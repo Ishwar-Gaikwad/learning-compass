@@ -62,7 +62,7 @@
 | **Backend** | Node.js + Express + JavaScript (REST API) |
 | **Database** | MongoDB Atlas (Persistence & Vector Search) |
 | **Vector Search** | MongoDB Atlas Vector Search (Integrated vector similarity search) |
-| **File Storage** | AWS S3 / Cloudflare R2 (Object Storage for materials) |
+| **File Storage** | Supabase Storage via S3-compatible API (Object Storage for materials) |
 | **AI Integration** | Provider-independent AI Service Layer (LLM, Embedding, and OCR adapters) |
 | **Deployment** | Production-ready deployment setup with strict environment separation |
 
